@@ -1,0 +1,71 @@
+
+<h1>Share a News</h1>
+//day 36 registration component
+
+<form [formGroup]="form" (submit)="submit()">
+  <table>
+    <tr>
+      <td>Title:</td>
+      <td>
+        <input type="text" formControlName="title">
+      </td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td>
+        <input type="text" placeholder="description of news" formControlName="description">
+      </td>
+    </tr>
+    <tr>
+      <td>photo:</td>
+      <td>
+        <input type="image" formControlName="photo">
+      </td>
+    </tr>
+    <tr>
+      <td>Tags:</td>
+      <td>
+        <input type="text" placeholder="tags" formControlName="tags">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="button" [routerLink]="['/']">Back</button>
+        <button type="submit" [disabled]="form.invalid">Add</button>
+      </td>
+    </tr>
+  </table>
+
+</form>
+
+
+<h2>Status: {{ newsForm }}</h2>
+
+<form [formGroup]="newsForm" (ngSubmit)="register()">
+
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" size="30" [formControlName]="'name'">
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" size="30" formControlName="email">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        {{ regForm.invalid }}
+        <button type="submit" [disabled]="newsForm.invalid">
+          Register Me
+        </button>
+      </td>
+    </tr>
+  </table>
+
+</form>
